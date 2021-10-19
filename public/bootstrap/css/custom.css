@@ -1,0 +1,42 @@
+.test {
+    margin-top: 75px;
+    opacity: 0.85;
+}
+
+.verifyCode {
+    width: 250px;
+}
+
+.verifycodeImg {
+    float:right;
+    margin-top: -50px;
+}
+
+.background-img {
+    background-image: url('https://cdn.lifestyleasia.com/wp-content/uploads/sites/6/2020/09/28161915/models01.jpg');
+    display: flex;
+}
+
+.notification {
+    float: right;
+    color:#1e90ff;
+    border-bottom: #1e90ff solid 0.2px;
+}
+
+.addModal {
+    margin-top: 90px;
+    height: auto;
+}
+
+.delete {
+    color:red;
+}
+.operationBtn {
+    float: right;
+}
+
+.form-user {
+    font-size: .8rem;
+    border-radius: 0.5rem;
+    padding: 1.5rem 1rem;
+}
