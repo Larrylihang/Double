@@ -48,7 +48,7 @@ class UserController extends Controller
         //2. form validation
             
         //3.add operation
-        $submit = User::create(['username'=>$input['username'], 'email'=>$input['email'], 'name'=>$input['name'],'password'=>$input['password'], 'salary'=>$input['salary']]);
+        $submit = User::create(['username'=>$input['username'], 'email'=>$input['email'], 'name'=>$input['name'],'password'=>$input['password'], 'salary'=>$input['salary'], 'permission'=>$input['permission']]);
         // dd($submit);
 
         // if the operation is success,

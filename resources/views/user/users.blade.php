@@ -76,7 +76,9 @@
                                             <th>Username</th>
                                             <th>Start date</th>
                                             <th>Update date</th>
+                                            <?php if (Session::get('permission') == 1): ?>
                                             <th>Operation</th>
+                                            <?php endif ?>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -89,6 +91,7 @@
                                             <td>{{$v->username}}</td>
                                             <td>{{$v->created_at}}</td>
                                             <td>{{$v->updated_at}}</td>
+                                            <?php if (Session::get('permission') == 1): ?>
                                             <td>
                                                 <a href="details?id={{$v->id}}" style="padding:5px" data-toggle="modal"
                                                     data-target="#detailsModal" aria-hidden="true"><i class="fa fa-bars"
@@ -99,6 +102,7 @@
                                                 <a href="delet?id={{$v->id}}" style="padding:5px"><i
                                                         class=" delete fa fa-trash" aria-hidden="true"></i></a>
                                             </td>
+                                            <?php endif ?>
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -193,6 +197,10 @@
                         </div>
                         <div class="form-group">
                             Salary: <input type="text" class="form-control form-control-user" id="salary" name="salary">
+                        </div>
+                        <div class="form-group">
+                            Permission: <input type="text" class="form-control form-control-user" id="permission"
+                                name="permission">
                         </div>
                         <div class="operationBtn">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

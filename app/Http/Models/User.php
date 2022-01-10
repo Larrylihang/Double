@@ -2,7 +2,7 @@
 /*
  * @Author: your name
  * @Date: 2021-05-22 04:30:24
- * @LastEditTime: 2021-10-27 01:00:23
+ * @LastEditTime: 2022-01-10 19:06:39
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /practiceProject/app/Http/Models/User.php
@@ -19,7 +19,7 @@ class User extends Model
     protected $table = 'users';
     protected $primaryKey='id';
     public $timestamp=false;
-    protected $fillable = ['username', 'email', 'salary','name','password'];
+    protected $fillable = ['username', 'email', 'salary','name','password', 'permission'];
 }
 
 // class User extends Authenticatable

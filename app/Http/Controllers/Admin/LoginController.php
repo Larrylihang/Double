@@ -2,8 +2,8 @@
 /*
  * @Author: your name
  * @Date: 2021-05-22 09:58:19
- * @LastEditTime: 2021-10-18 16:43:41
- * @LastEditors: your name
+ * @LastEditTime: 2022-01-10 20:02:38
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /practiceProject/app/Http/Controllers/Admin/LoginController.php
  */
@@ -44,10 +44,14 @@ class LoginController extends Controller
             'code.captcha' => 'Verifycode is incorrect!',
         ];
         $sum = DB::table('users')->sum('salary');
+        $permission = User::where('permission');
         $input = Input::all();  //receive infromation users post
         $validator = Validator::make(Input::all(), $rules, $msg);
         $user = User::where('username', $input['username'])->first();
         Session::put(['username'=>$input['username']]);
+        // dd(
+        //     Session::all()
+        // );
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator);
         }
