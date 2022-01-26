@@ -57,6 +57,7 @@ Route::group(['prefix'=>'admin'], function () {
 
 Route::group(['middleware' => ['web', 'login.check'],'prefix'=>'admin', 'namespace'=> 'Admin'], function () {
     Route::any('/homepage', 'LoginController@receive')->name('homepage');
+    Route::any('/homepage', 'ChartController@pieChart');
     Route::any('/exit', 'LoginController@exit');
 });
 

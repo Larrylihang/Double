@@ -19,7 +19,7 @@ class User extends Model
     protected $table = 'users';
     protected $primaryKey='id';
     public $timestamp=false;
-    protected $fillable = ['username', 'email', 'salary','name','password', 'permission'];
+    protected $fillable = ['username', 'email', 'salary','name','password', 'permission', 'created_at'];
 }
 
 // class User extends Authenticatable

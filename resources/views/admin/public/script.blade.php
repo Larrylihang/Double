@@ -18,5 +18,5 @@
  <script type="text/javascript" src="http://php-acad.28sjw.com/Statics/Assets/js/jquery.min-3.2.1.js"></script>
  <!-- Datatables -->
  <script src="/bootstrap/bjs/demo/datatables-demo.js"></script>
- <scripy src="/bootstrap/vendor/datatables/dataTables.bootstrap4.min.js">
-     </script>
+ <script src="/bootstrap/vendor/datatables/dataTables.bootstrap4.min.js">
+ </script>
