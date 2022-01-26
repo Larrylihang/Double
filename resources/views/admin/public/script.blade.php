@@ -20,3 +20,4 @@
  <script src="/bootstrap/bjs/demo/datatables-demo.js"></script>
  <script src="/bootstrap/vendor/datatables/dataTables.bootstrap4.min.js">
  </script>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

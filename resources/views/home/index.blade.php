@@ -2,6 +2,48 @@
 <html lang="en">
 
 <head>
+@include('admin.public.script')
+<!-- //* script for bar chart -->
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['bar']
+        });
+        google.charts.setOnLoadCallback(drawStuff);
+
+        function drawStuff() {
+            var data = new google.visualization.arrayToDataTable([
+                ['Opening Move', 'Percentage'],
+                <?php echo $data; ?>
+            ]);
+
+            var options = {
+                title: 'Chess opening moves',
+                width: 700,
+                legend: {
+                    position: 'none'
+                },
+                chart: {
+                    title: 'Chess opening moves',
+                    subtitle: 'popularity by percentage'
+                },
+                bars: 'horizontal', // Required for Material Bar Charts.
+                axes: {
+                    x: {
+                        0: {
+                            side: 'bottom',
+                            label: 'Percentage'
+                        } // Top x-axis.
+                    }
+                },
+                bar: {
+                    groupWidth: "90%"
+                }
+            };
+
+            var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+            chart.draw(data, options);
+        };
+    </script>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -145,14 +187,14 @@
                         <div class="col-xl-8 col-lg-7">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
-                                <div
+                                <!-- <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
-                                    <div class="dropdown no-arrow">
+                                    <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6> -->
+                                    <!-- <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
+                                        </a> -->
                                         <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                             aria-labelledby="dropdownMenuLink">
                                             <div class="dropdown-header">Dropdown Header:</div>
@@ -161,14 +203,12 @@
                                             <div class="dropdown-divider"></div>
                                             <a class="dropdown-item" href="#">Something else here</a>
                                         </div> -->
-                                    </div>
-                                </div>
+                                    <!-- </div> -->
+                                <!-- </div> -->
                                 <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart" width="400" height="400"></canvas>
-                                    </div>
-                                </div>
+                                <!-- <div class="card-body"> -->
+                                <div id="top_x_div" style="width: 300px; height: 400px;"></div>
+                                <!-- </div> -->
                             </div>
                         </div>
 
@@ -416,10 +456,7 @@
     </div>
 
     <!-- page script -->
-    <script type="text/javascript">
-        var _data = '{!! json_encode($data) !!}';
-        var _labels = '{!! json_encode($labels) !!}';
-    </script>
+
 
     @include('admin.public.script')
 

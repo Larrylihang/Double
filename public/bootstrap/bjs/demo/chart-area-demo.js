@@ -34,7 +34,7 @@ var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: [_labels],
+    labels: [],
     datasets: [{
       label: "Earnings",
       lineTension: 0.3,
